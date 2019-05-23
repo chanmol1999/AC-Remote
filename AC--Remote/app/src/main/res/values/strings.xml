@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AC-Remote</string>
+    <string name="title">AC Remote</string>
+
 </resources>
