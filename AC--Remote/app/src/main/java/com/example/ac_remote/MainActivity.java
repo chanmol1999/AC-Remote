@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 swingvalue = (String) dataSnapshot.getValue();
+                if (swingvalue.equals( "1" )) {
+                    swing.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+                } else {
+                    swing.setTextColor( getResources().getColor( android.R.color.black ) );
+                }
             }
 
             @Override
@@ -45,19 +50,29 @@ public class MainActivity extends AppCompatActivity {
 
             }
         } );
+
         swing.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (swingvalue.equals( "1" ))
+                if (swingvalue.equals( "1" )) {
                     swingd.setValue( "0" );
-                else
+                    swing.setTextColor( getResources().getColor( android.R.color.black ) );
+                } else {
                     swingd.setValue( "1" );
+                    swing.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+                }
             }
         } );
         powerd.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 powervalue = (String) dataSnapshot.getValue();
+                if (powervalue.equals( "1" )) {
+                    power.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+
+                } else {
+                    power.setTextColor( getResources().getColor( android.R.color.black ) );
+                }
             }
 
             @Override
@@ -65,13 +80,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         } );
+
         power.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (powervalue.equals( "1" ))
+                if (powervalue.equals( "1" )) {
+                    power.setTextColor( getResources().getColor( android.R.color.black ) );
                     powerd.setValue( "0" );
-                else
+                } else {
                     powerd.setValue( "1" );
+                    power.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+
+                }
             }
         } );
         tempd.addValueEventListener( new ValueEventListener() {
@@ -116,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 swingvalue = (String) dataSnapshot.getValue();
+                if (swingvalue.equals( "1" )) {
+                    swing.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+                } else {
+                    swing.setTextColor( getResources().getColor( android.R.color.black ) );
+                }
             }
 
             @Override
@@ -128,6 +153,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 powervalue = (String) dataSnapshot.getValue();
+                if (powervalue.equals( "1" )) {
+                    power.setTextColor( getResources().getColor( android.R.color.holo_green_light ) );
+
+                } else {
+                    power.setTextColor( getResources().getColor( android.R.color.black ) );
+                }
             }
 
             @Override
